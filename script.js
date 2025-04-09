@@ -7,7 +7,7 @@ var myChart = echarts.init(dom, null, {
 });
 
 // 定義 Google Apps Script 部署的網址
-const SCRIPT_URL = 'YOUR_SCRIPT_URL_HERE';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby6ptRlGbOJK8cobRRx3lgZST7SRXifGHX0ZxZMgDDHRpAWll79VqQ8fCKJBblVXpYvIA/exec';
 
 // 從 Google Sheets 獲取數據
 async function fetchData() {
