@@ -12,7 +12,18 @@ const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby6ptRlGbOJK8cobRRx3
 // 從 Google Sheets 獲取數據
 async function fetchData() {
   try {
-    const response = await fetch(SCRIPT_URL);
+    const response = await fetch(SCRIPT_URL, {
+      method: 'GET',
+      mode: 'cors',
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
     const data = await response.json();
     return data;
   } catch (error) {
